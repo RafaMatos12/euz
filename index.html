@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EU.Z | Moda feminina, masculina e fitness em Videira</title>
+<meta name="description" content="EU.Z, no Centro de Videira SC: moda feminina, masculina e fitness, ballet, uniforme escolar, tecidos e moda casa. A moda é toda sua.">
+<meta name="theme-color" content="#2B1A24">
+<!-- DEPLOY STEP: troque as URLs abaixo pela URL final do site antes de publicar -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="EU.Z | A moda é toda sua">
+<meta property="og:description" content="Moda feminina, masculina e fitness no Centro de Videira SC.">
+<meta property="og:url" content="https://EXEMPLO.com.br/">
+<meta property="og:image" content="https://EXEMPLO.com.br/assets/hero-poster.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C98C7E'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='34' font-weight='700' text-anchor='middle' fill='%23fff'%3Eeu%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#2B1A24;
+  --panel:#3A2431;
+  --accent:#D4968A;
+  --accent-hover:#E3A99D;
+  --accent-muted:#6B4A4F;
+  --line:#8A6A70;
+  --text-secondary:#CDB7B8;
+  --text-primary:#F6EDE8;
+  --ease:cubic-bezier(.22,.8,.24,1);
+  --ease-io:cubic-bezier(.65,0,.35,1);
+  --tshadow:0 1px 2px rgba(20,8,16,.95),0 3px 12px rgba(20,8,16,.78),0 10px 44px rgba(20,8,16,.8);
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden;overflow-x:clip;scroll-behavior:smooth;background:var(--canvas)}
+body{overflow-x:hidden;overflow-x:clip;background:var(--canvas);color:var(--text-primary);font-family:var(--body);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;opacity:0;animation:pagein .8s var(--ease) .05s forwards}
+@keyframes pagein{to{opacity:1}}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,.band .hl{text-wrap:balance}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--accent);color:var(--canvas);padding:10px 16px;border-radius:10px;font-weight:500;text-decoration:none;transition:top .25s var(--ease)}
+.skip:focus{top:12px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+main:focus{outline:none}
+.mono{font-family:var(--mono);font-weight:500;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+
+/* ambiente fixo: um lugar só atrás de tudo */
+.env{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:var(--canvas)}
+.env::before{content:"";position:absolute;inset:-20%;background:radial-gradient(40% 36% at 22% 28%,rgba(201,140,126,.16),transparent 70%),radial-gradient(46% 40% at 82% 74%,rgba(120,64,92,.28),transparent 72%);animation:envdrift 70s var(--ease-io) infinite alternate}
+@keyframes envdrift{from{transform:translate3d(-3%,-2%,0)}to{transform:translate3d(3%,2%,0)}}
+.mote{position:absolute;top:100vh;width:var(--s);height:var(--s);border-radius:50%;background:#F2D3C8;opacity:.28;animation:mote var(--t) linear infinite;animation-delay:var(--dl)}
+@keyframes mote{from{transform:translate3d(0,0,0)}to{transform:translate3d(var(--dx),-115vh,0)}}
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
+
+/* menu */
+.nav{position:fixed;z-index:50;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:linear-gradient(180deg,rgba(26,12,20,.78),rgba(26,12,20,0))}
+.nav .logo img{height:38px;width:auto}
+.nav nav{display:flex;align-items:center;gap:clamp(14px,3vw,32px)}
+.nav nav a.link{font-size:15px;color:var(--text-primary);text-decoration:none;text-shadow:0 1px 8px rgba(20,8,16,.8);transition:color .3s var(--ease)}
+.nav nav a.link:hover{color:var(--accent-hover)}
+@media (max-width:640px){.nav nav a.link{display:none}}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--accent);color:var(--canvas);font-family:var(--body);font-weight:500;font-size:17px;line-height:1;padding:16px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;text-shadow:none;position:relative;transition:background .3s var(--ease),transform .3s var(--ease)}
+.btn:hover{background:var(--accent-hover);transform:translateY(-2px)}
+.btn.sm{font-size:15px;padding:11px 18px}
+.btn.ghost{background:transparent;color:var(--text-primary);border:2px solid var(--line)}
+.btn.ghost:hover{background:rgba(246,237,232,.08);border-color:var(--text-primary)}
+@media (pointer:coarse){.btn{min-height:44px}}
+.row-btns{display:flex;flex-wrap:wrap;gap:14px}
+
+/* hero */
+.hero{position:relative;background:var(--canvas)}
+.stage{position:relative;width:100%;min-height:100svh;overflow:hidden;display:flex;align-items:center}
+.poster{position:absolute;inset:0;background:var(--canvas) url('assets/hero-poster.jpg') 66% 50%/cover no-repeat;will-change:transform;transform:translateZ(0)}
+#hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s var(--ease);will-change:transform;transform:translateZ(0);pointer-events:none}
+.hero.video-ready #hero-video{opacity:1}
+.hero.video-failed #hero-video{display:none}
+.scrim{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 120% 90% at 50% 45%,rgba(26,12,20,0) 35%,rgba(26,12,20,.55) 100%),linear-gradient(90deg,rgba(26,12,20,.86) 0%,rgba(26,12,20,.6) 34%,rgba(26,12,20,.12) 62%,rgba(26,12,20,0) 78%)}
+.ring{position:absolute;right:clamp(16px,4vw,48px);bottom:28px;width:44px;height:44px;color:var(--accent);opacity:0;transition:opacity .4s var(--ease);transform:rotate(-90deg)}
+.hero.loading .ring{opacity:.9}
+.ring circle{transition:stroke-dashoffset .12s linear}
+.static-copy{position:relative;z-index:2;max-width:min(640px,92vw);margin-left:clamp(20px,6vw,96px);padding:120px 0 90px;text-shadow:var(--tshadow)}
+.static-copy .mono{display:block;margin-bottom:18px}
+.static-copy h1{font-family:var(--display);font-weight:800;font-size:clamp(46px,7.4vw,96px);line-height:.98;letter-spacing:-.025em;margin-bottom:22px}
+.static-copy p.lede{font-size:clamp(18px,1.7vw,21px);color:var(--text-primary);max-width:36ch;margin-bottom:30px}
+.bands{display:none}
+.cue{position:absolute;left:50%;bottom:24px;z-index:3;transform:translateX(-50%);width:26px;height:42px;border:2px solid var(--text-secondary);border-radius:14px;opacity:.8}
+.cue::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--text-secondary);animation:cue 2.4s var(--ease-io) infinite;animation-delay:-.8s}
+@keyframes cue{0%{transform:translateY(0);opacity:1}70%{transform:translateY(14px);opacity:0}100%{opacity:0}}
+.hero:not(.scrub) .cue{display:none}
+
+/* modo rolagem: ligado por JS, só quando existe vídeo */
+.hero.scrub{height:500vh}
+.hero.scrub .stage{position:sticky;top:0;height:100vh;min-height:0}
+.hero.scrub .static-copy{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);padding:0;margin:0}
+.hero.scrub .bands{display:block;position:absolute;inset:0;z-index:2}
+.band{position:absolute;left:clamp(20px,6vw,96px);top:50%;transform:translateY(-50%);width:min(560px,44vw);opacity:0;visibility:hidden;pointer-events:none;text-shadow:var(--tshadow)}
+.band .btn{pointer-events:auto}
+.band::before{content:"";position:absolute;inset:-14% -10%;z-index:-1;pointer-events:none;opacity:calc(.25 + .75*var(--k,1));background:radial-gradient(ellipse 74% 62% at 40% 50%,rgba(20,8,16,.7) 0%,rgba(20,8,16,.46) 46%,rgba(20,8,16,0) 76%)}
+.band .hl{font-family:var(--display);font-weight:800;font-size:clamp(38px,5.4vw,78px);line-height:1;letter-spacing:-.02em}
+.band .mono{display:block;margin-bottom:16px}
+.band .sub{margin-top:20px;font-size:clamp(17px,1.5vw,20px);max-width:36ch;opacity:clamp(0,(var(--k,0) - .66)*4,1);transform:translateY(calc((1 - clamp(0,(var(--k,0) - .66)*4,1))*14px))}
+.band .cta{margin-top:26px;opacity:clamp(0,(var(--k,0) - .78)*5,1);transform:translateY(calc((1 - clamp(0,(var(--k,0) - .78)*5,1))*14px))}
+.w{display:inline-block;--kc:clamp(0,(var(--k,0) - var(--th,0))*2.8,1);opacity:var(--kc);transform:translateY(calc((1 - var(--kc))*-24px))}
+.band.rise .w{transform:translateY(calc((1 - var(--kc))*26px))}
+
+/* o hero vira estático nos mesmos cinco casos do JS */
+@media (max-width:720px),(orientation:portrait) and (max-width:1024px),(orientation:portrait) and (pointer:coarse),(orientation:landscape) and (pointer:coarse) and (max-height:560px),(prefers-reduced-motion:reduce){
+  .hero.scrub{height:auto}
+  .hero.scrub .stage{position:relative;height:auto;min-height:100svh}
+  .hero.scrub .static-copy{position:relative;width:auto;height:auto;overflow:visible;clip:auto;margin-left:clamp(20px,6vw,96px);padding:120px 0 90px}
+  .hero.scrub .bands,.hero.scrub .cue,.hero .ring{display:none}
+  #hero-video{display:none}
+}
+@media (max-width:720px){
+  .stage{align-items:flex-end}
+  .poster{background-position:78% 40%}
+  .scrim{background:linear-gradient(180deg,rgba(26,12,20,.2) 0%,rgba(26,12,20,.35) 30%,rgba(26,12,20,.9) 74%)}
+  .static-copy{padding:110px 0 56px;margin-right:20px}
+}
+@media (max-height:560px){.cue,.ring{display:none}}
+
+/* seções */
+section{position:relative}
+.wrap{width:min(1140px,100% - 40px);margin-inline:auto}
+.sec{padding:clamp(72px,11vw,150px) 0}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.6vw,60px);line-height:1.04;letter-spacing:-.02em}
+.sec .mono{display:block;margin-bottom:16px}
+.lead{color:var(--text-secondary);max-width:46ch;margin-top:18px}
+
+/* entradas */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.sec.in .rv,.rv.in{opacity:1;transform:none}
+.sec.in.settled .rv,.rv.in.settled{transition-delay:0s}
+
+/* 1. categorias: abas e um painel que troca */
+.cats{padding-top:clamp(64px,9vw,120px)}
+.cats .top{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:38px}
+.tab{font-family:var(--body);font-weight:500;font-size:17px;color:var(--text-primary);background:transparent;border:1px solid var(--line);border-radius:999px;padding:12px 20px;cursor:pointer;transition:background .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease)}
+.tab:hover{border-color:var(--accent)}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--canvas)}
+.tab.big{font-size:19px;padding:14px 24px}
+@media (pointer:coarse){.tab{min-height:44px}}
+.panel-cat{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,72px);align-items:center;margin-top:30px;background:var(--panel);border:1px solid var(--accent-muted);border-radius:28px;padding:clamp(26px,4vw,52px)}
+.panel-cat .badge{width:min(240px,100%);aspect-ratio:1;border-radius:50%;background:var(--accent);color:var(--canvas);display:grid;place-items:center;margin-inline:auto;transition:transform .6s var(--ease)}
+.panel-cat .badge svg{width:56%;height:56%}
+.panel-cat .txt{transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.panel-cat.swap .txt,.panel-cat.swap .badge{opacity:0;transform:translateY(10px)}
+.panel-cat .badge{transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.panel-cat h3{font-family:var(--display);font-weight:800;font-size:clamp(30px,3.6vw,46px);line-height:1.05;letter-spacing:-.015em;margin-bottom:12px}
+.panel-cat p{color:var(--text-secondary);max-width:42ch;margin-bottom:26px}
+@media (max-width:760px){.panel-cat{grid-template-columns:1fr;text-align:left}.panel-cat .badge{width:132px;margin-inline:0}}
+
+/* 2. a loja: foto real e texto */
+.loja .grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,56px);align-items:start}
+.loja figure{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--accent-muted);background:var(--panel)}
+.loja figure img{width:100%;height:auto}
+.loja .stack{display:grid;gap:22px}
+.loja .stack figure.tall img{aspect-ratio:4/3;object-fit:cover;object-position:50% 30%}
+.loja .copy{padding:6px 0 0}
+.loja .facts{list-style:none;display:grid;gap:12px;margin-top:26px}
+.loja .facts li{display:flex;gap:12px;align-items:baseline;color:var(--text-secondary)}
+.loja .facts li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--accent);transform:translateY(-2px)}
+.loja .facts strong{color:var(--text-primary);font-weight:500}
+@media (max-width:860px){.loja .grid{grid-template-columns:1fr}}
+
+/* 3. tecidos e delivery */
+.mix .cols{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(24px,4vw,56px);align-items:stretch}
+.tec{position:relative;border-radius:28px;overflow:hidden;min-height:440px;display:flex;align-items:flex-end;border:1px solid var(--accent-muted)}
+.tec img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:74% 50%}
+.tec::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,12,20,.05) 20%,rgba(26,12,20,.9) 100%)}
+.tec .in-txt{position:relative;z-index:1;padding:clamp(24px,3vw,40px)}
+.tec h3,.deliv h3{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.2vw,40px);line-height:1.05;margin-bottom:10px}
+.tec p{color:var(--text-primary);max-width:34ch;margin-bottom:20px;text-shadow:var(--tshadow)}
+.deliv{display:grid;gap:22px;align-content:space-between}
+.deliv .box{background:var(--panel);border:1px solid var(--accent-muted);border-radius:28px;padding:clamp(24px,3vw,40px)}
+.deliv .box p{color:var(--text-secondary);margin-bottom:20px;max-width:36ch}
+.deliv .ico{width:56px;height:56px;color:var(--accent);margin-bottom:16px}
+.husband{display:grid;grid-template-columns:minmax(0,160px) 1fr;gap:20px;align-items:center}
+.husband img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:30% 30%;border-radius:18px;border:1px solid var(--line)}
+.husband h3{font-size:clamp(22px,2.2vw,28px);margin-bottom:6px}
+.husband p{margin:0;color:var(--text-secondary)}
+@media (max-width:860px){.mix .cols{grid-template-columns:1fr}.tec{min-height:380px}}
+@media (max-width:480px){.husband{grid-template-columns:1fr}.husband img{aspect-ratio:16/10;object-position:50% 40%}}
+
+/* 4. faixa do Instagram */
+.insta{padding:clamp(24px,5vw,60px) 0}
+.insta .band-ig{position:relative;overflow:hidden;border-top:1px solid var(--accent-muted);border-bottom:1px solid var(--accent-muted);padding:clamp(36px,5vw,64px) 0;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.insta h2{font-size:clamp(28px,3.4vw,44px)}
+.insta p{color:var(--text-secondary);margin-top:8px}
+.stitch{position:absolute;left:0;right:0;top:50%;height:12px;margin-top:-6px;color:var(--accent);opacity:.45;pointer-events:none}
+.stitch path{fill:none;stroke:currentColor;stroke-width:1.5;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--p,0))}
+.insta .in-ig{position:relative;z-index:1}
+
+/* depoimentos */
+.voices .row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:44px;align-items:start}
+.voices figure{padding:26px 24px 28px;border-left:2px solid var(--accent);background:linear-gradient(90deg,rgba(58,36,49,.7),rgba(58,36,49,0))}
+.voices figure:nth-child(2){margin-top:44px}
+.voices figure:nth-child(3){margin-top:18px}
+.voices blockquote{font-family:var(--display);font-weight:700;font-size:clamp(21px,2.1vw,26px);line-height:1.22}
+.voices figcaption{margin-top:16px;color:var(--text-secondary);font-size:15px}
+.voices .stars{margin-top:30px;color:var(--text-secondary)}
+.voices .stars strong{color:var(--text-primary);font-weight:500}
+@media (max-width:860px){.voices .row{grid-template-columns:1fr}.voices figure:nth-child(n){margin-top:0}}
+
+/* perguntas */
+.faq .cols{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(28px,6vw,90px)}
+details{border-bottom:1px solid var(--line);padding:6px 0}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 0;font-family:var(--display);font-weight:700;font-size:clamp(20px,2vw,24px);line-height:1.2}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;width:34px;height:34px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:18px;color:var(--accent);transition:transform .4s var(--ease),background .4s var(--ease)}
+details[open] summary::after{transform:rotate(45deg);background:var(--panel)}
+details p{color:var(--text-secondary);padding:0 52px 22px 0;max-width:52ch}
+@media (max-width:860px){.faq .cols{grid-template-columns:1fr}}
+
+/* chamada final */
+.final{padding:clamp(40px,7vw,90px) 0 clamp(72px,10vw,130px)}
+.final .panel{position:relative;overflow:hidden;background:var(--accent);color:var(--canvas);border-radius:32px;padding:clamp(40px,7vw,96px) clamp(24px,6vw,84px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:center}
+.final h2{font-size:clamp(36px,5.4vw,72px);color:var(--canvas)}
+.final p{margin-top:14px;color:#4A2E36;max-width:42ch}
+.final .btn{background:var(--canvas);color:var(--text-primary);font-size:19px;padding:20px 32px}
+.final .btn:hover{background:#3A2431}
+.final .btn::after{content:"";position:absolute;inset:-6px;border-radius:999px;border:2px solid var(--canvas);opacity:0}
+.final.live .btn::after{animation:pulse 4.6s var(--ease-io) infinite;animation-delay:-1.4s}
+@keyframes pulse{0%,100%{opacity:0;transform:scale(.97)}50%{opacity:.5;transform:scale(1.04)}}
+@media (max-width:760px){.final .panel{grid-template-columns:1fr}.final .btn{justify-self:start}}
+
+footer{border-top:1px solid var(--accent-muted);padding:48px 0 56px}
+footer .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,72px);align-items:start}
+footer .logo img{height:52px;width:auto}
+footer .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;color:var(--text-secondary);font-size:16px}
+footer .info strong{display:block;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+footer a{text-decoration:none;border-bottom:1px solid var(--accent-muted);transition:border-color .3s var(--ease),color .3s var(--ease)}
+footer a:hover{color:var(--text-primary);border-color:var(--accent)}
+footer .logo{border:0}
+@media (max-width:640px){footer .wrap{grid-template-columns:1fr}}
+
+/* movimento reduzido: tudo no estado final */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important;transition-delay:0s!important}
+  body{opacity:1}
+  .rv{opacity:1;transform:none}
+  .mote{display:none}
+  .stitch path{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<div class="env" aria-hidden="true"></div>
+
+<div class="nav">
+  <a class="logo" href="#topo" aria-label="EU.Z, início"><img src="assets/logo-white.png" alt="EU.Z, a moda é toda sua" width="700" height="360"></a>
+  <nav aria-label="Principal">
+    <a class="link" href="#categorias">Categorias</a>
+    <a class="link" href="#loja">A loja</a>
+    <a class="link" href="#perguntas">Perguntas</a>
+    <a class="btn sm" href="https://wa.me/5549999431617?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20EU.Z" rel="noopener">WhatsApp</a>
+  </nav>
+</div>
+
+<header class="hero" id="hero">
+  <span id="topo"></span>
+  <div class="stage">
+    <div class="poster" aria-hidden="true"></div>
+    <video id="hero-video" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
+    <div class="scrim" aria-hidden="true"></div>
+    <svg class="ring" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="126" style="stroke-dashoffset:var(--ld,126)"/></svg>
+
+    <div class="static-copy">
+      <span class="mono">EU.Z · Videira, SC</span>
+      <h1>A moda é toda sua.</h1>
+      <p class="lede">Moda feminina, masculina e fitness no Centro de Videira. Também uniforme escolar, ballet, tecidos e moda casa.</p>
+      <div class="row-btns">
+        <a class="btn" href="https://wa.me/5549999431617?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20EU.Z" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn ghost" href="#categorias">Ver o que tem na loja</a>
+      </div>
+    </div>
+
+    <div class="bands">
+      <div class="band" data-a="0" data-b="0.25">
+        <span class="mono">EU.Z · Videira, SC</span>
+        <p class="hl split">Escolha com calma.</p>
+      </div>
+      <div class="band" data-a="0.26" data-b="0.51">
+        <p class="hl split">Feminina, masculina e fitness.</p>
+      </div>
+      <div class="band" data-a="0.52" data-b="0.77">
+        <p class="hl split">Do uniforme escolar ao ballet.</p>
+      </div>
+      <div class="band rise" data-a="0.78" data-b="1">
+        <p class="hl split">A moda é toda sua.</p>
+        <p class="sub">Moda feminina, masculina e fitness no Centro de Videira.</p>
+        <div class="cta"><a class="btn" href="https://wa.me/5549999431617?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20EU.Z" rel="noopener">Chamar no WhatsApp</a></div>
+      </div>
+    </div>
+    <div class="cue" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <section class="sec cats" id="categorias">
+    <div class="wrap">
+      <div class="rv">
+        <span class="mono">Categorias</span>
+        <h2>O que você procura?</h2>
+        <p class="lead">Escolha uma categoria e peça direto pelo WhatsApp.</p>
+      </div>
+      <div class="tabs rv" role="tablist" aria-label="Categorias da loja" style="--d:.08s">
+        <button class="tab big" role="tab" id="t-fem" aria-selected="true" aria-controls="painel" data-k="fem">Feminina</button>
+        <button class="tab big" role="tab" id="t-mas" aria-selected="false" aria-controls="painel" data-k="mas" tabindex="-1">Masculina</button>
+        <button class="tab" role="tab" id="t-fit" aria-selected="false" aria-controls="painel" data-k="fit" tabindex="-1">Fitness</button>
+        <button class="tab" role="tab" id="t-bal" aria-selected="false" aria-controls="painel" data-k="bal" tabindex="-1">Ballet</button>
+        <button class="tab" role="tab" id="t-uni" aria-selected="false" aria-controls="painel" data-k="uni" tabindex="-1">Uniforme escolar</button>
+        <button class="tab" role="tab" id="t-tec" aria-selected="false" aria-controls="painel" data-k="tec" tabindex="-1">Tecidos e moda casa</button>
+      </div>
+      <div class="panel-cat rv" id="painel" role="tabpanel" aria-labelledby="t-fem" style="--d:.14s">
+        <div class="badge" id="badge" aria-hidden="true"></div>
+        <div class="txt">
+          <h3 id="cat-title">Moda feminina</h3>
+          <p id="cat-text">Blusas, calças jeans, malhas e bolsas. Peça o que você quer ver e a equipe responde.</p>
+          <a class="btn" id="cat-link" href="https://wa.me/5549999431617?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20EU.Z%20e%20quero%20ver%20moda%20feminina" rel="noopener">Pedir pelo WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec loja" id="loja">
+    <div class="wrap grid">
+      <div class="stack">
+        <figure class="rv"><img src="assets/loja-interior.jpg" alt="Interior da loja EU.Z, com araras de roupa, manequins e a escada" width="1800" height="1350" loading="lazy"></figure>
+      </div>
+      <div class="stack">
+        <div class="copy rv" style="--d:.08s">
+          <span class="mono">A loja</span>
+          <h2>Entre, ande pelas araras.</h2>
+          <p class="lead">A EU.Z fica na Rua Nicolau Cavon, no Centro de Videira. Roupa de verdade, para ver de perto e levar.</p>
+          <ul class="facts">
+            <li><span><strong>Feminina e masculina</strong>, mais fitness, dança e esporte.</span></li>
+            <li><span><strong>Uniforme escolar</strong> para a volta às aulas.</span></li>
+            <li><span><strong>Malhas e tecidos</strong>, no atacado e no varejo.</span></li>
+          </ul>
+        </div>
+        <figure class="tall rv" style="--d:.16s"><img src="assets/loja-fachada.jpg" alt="Fachada da loja EU.Z, com o logo e a vitrine" width="960" height="1280" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec mix" id="mais">
+    <div class="wrap cols">
+      <article class="tec rv">
+        <img src="assets/tecidos.jpg" alt="Rolo de tecido rosa desenrolando sobre um balcão de madeira" width="1600" height="894" loading="lazy">
+        <div class="in-txt">
+          <span class="mono">Tecidos</span>
+          <h3>Malhas, rendas e aviamentos.</h3>
+          <p>No atacado e no varejo. Patchwork, rendas e tudo para costurar.</p>
+          <a class="btn" href="https://wa.me/5549999431617?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20EU.Z%20e%20quero%20ver%20tecidos" rel="noopener">Pedir tecido</a>
+        </div>
+      </article>
+      <div class="deliv">
+        <div class="box rv" style="--d:.08s">
+          <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="46" r="8"/><circle cx="50" cy="46" r="8"/><path d="M14 46h12l8-18h10l6 18M34 28l-4-10h-8M44 20h8"/></svg>
+          <h3>Delivery</h3>
+          <p>Peça pelo WhatsApp e combine a entrega com a equipe.</p>
+          <a class="btn sm" href="https://wa.me/5549999431617?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20EU.Z%20e%20quero%20pedir%20delivery" rel="noopener">Pedir delivery</a>
+        </div>
+        <div class="box husband rv" style="--d:.16s">
+          <img src="assets/sala-espera.jpg" alt="Sala de espera da loja, com poltronas, TV e a placa Estacionamento de Marido" width="600" height="760" loading="lazy">
+          <div>
+            <span class="mono">Na loja</span>
+            <h3 style="font-family:var(--display);font-weight:800;margin-top:6px">Estacionamento de Marido</h3>
+            <p>Sala de espera com TV e poltronas para quem acompanha as compras.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="insta" aria-label="Instagram">
+    <div class="wrap">
+      <div class="band-ig rv">
+        <svg class="stitch draw" viewBox="0 0 1000 12" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 6 C 120 0, 220 12, 340 6 S 560 0, 680 6 S 900 12, 1000 6"/></svg>
+        <div class="in-ig">
+          <h2>Novidades no Instagram.</h2>
+          <p>@lojaeuz · 6.875 seguidores</p>
+        </div>
+        <a class="btn in-ig" href="https://www.instagram.com/lojaeuz/" rel="noopener">Ver o perfil</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec voices" id="quem-compra">
+    <div class="wrap">
+      <div class="rv">
+        <span class="mono">Quem já compra</span>
+        <h2>Clientes que voltam.</h2>
+      </div>
+      <div class="row">
+        <figure class="rv" style="--d:.05s"><blockquote>“Loja excelente, grande variedade de tecidos e roupas.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+        <figure class="rv" style="--d:.15s"><blockquote>“Gosto dos produtos e do atendimento, faz muitos anos que sou cliente.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+        <figure class="rv" style="--d:.25s"><blockquote>“Lugar muito bom agradável, os funcionárias são bem educadas.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+      </div>
+      <p class="stars rv">Nota <strong>4,9</strong> no Google, com 25 avaliações.</p>
+    </div>
+  </section>
+
+  <section class="sec faq" id="perguntas">
+    <div class="wrap cols">
+      <div class="rv">
+        <span class="mono">Perguntas</span>
+        <h2>O que mais perguntam.</h2>
+      </div>
+      <div class="rv" style="--d:.1s">
+        <details><summary>Vocês fazem delivery?</summary><p>Sim. Chame no WhatsApp, diga o que quer e combine a entrega com a equipe.</p></details>
+        <details><summary>Vendem tecido no atacado?</summary><p>Sim. Malhas e tecidos saem no atacado e no varejo. Chame no WhatsApp com o que você precisa.</p></details>
+        <details><summary>Como peço um tamanho ou uma peça?</summary><p>Chame no WhatsApp com a peça e o tamanho. A equipe responde.</p></details>
+        <details><summary>Onde fica a loja?</summary><p>Rua Nicolau Cavon, 160, Centro, Videira, SC.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="contato">
+    <div class="wrap">
+      <div class="panel rv">
+        <div>
+          <h2>Passe na loja ou chame agora.</h2>
+          <p>WhatsApp (49) 99943-1617. Rua Nicolau Cavon, 160, Centro, Videira.</p>
+        </div>
+        <a class="btn" href="https://wa.me/5549999431617?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20EU.Z" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#topo" aria-label="EU.Z, voltar ao topo"><img src="assets/logo-white.png" alt="EU.Z, a moda é toda sua" width="700" height="360"></a>
+    <div class="info">
+      <div><strong>Endereço</strong>Rua Nicolau Cavon, 160<br>Centro, Videira, SC, 89560-000</div>
+      <div><strong>WhatsApp</strong><a href="https://wa.me/5549999431617" rel="noopener">(49) 99943-1617</a></div>
+      <div><strong>Telefone</strong><a href="tel:+554935333116">(49) 3533-3116</a></div>
+      <div><strong>Instagram</strong><a href="https://www.instagram.com/lojaeuz/" rel="noopener">@lojaeuz</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+'use strict';
+const HAS_VIDEO = false;                       // vira true quando assets/hero-scrub.mp4 existir
+const VIDEO_URL = 'assets/hero-scrub.mp4';
+const VIDEO_BYTES = 6000000;                   // tamanho real do arquivo, ajustar ao colocar o vídeo
+const WA = 'https://wa.me/5549999431617?text=';
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+const smooth = (p, e0, e1) => { const t = clamp((p - e0) / (e1 - e0), 0, 1); return t * t * (3 - 2 * t); };
+function rng(seed) { let s = seed >>> 0; return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; }
+const RM = '(prefers-reduced-motion: reduce)';
+const GATES = [
+  '(max-width: 720px)',
+  '(orientation: portrait) and (max-width: 1024px)',
+  '(orientation: portrait) and (pointer: coarse)',
+  '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
+  RM
+];
+
+const hero = $('#hero'), video = $('#hero-video'), ring = $('.ring', hero);
+
+/* ---------- texto dividido em palavras (uma vez, com sorteio fixo) ---------- */
+const rand = rng(20261123);
+$$('.split').forEach(el => {
+  const text = el.textContent.trim();
+  const words = text.split(/\s+/);
+  el.textContent = '';
+  const sr = document.createElement('span'); sr.className = 'sr'; sr.textContent = text;
+  const vis = document.createElement('span'); vis.setAttribute('aria-hidden', 'true');
+  words.forEach((w, i) => {
+    const s = document.createElement('span'); s.className = 'w'; s.textContent = w;
+    s.style.setProperty('--th', ((i / words.length) * 0.45 + rand() * 0.04).toFixed(3));
+    vis.appendChild(s);
+    if (i < words.length - 1) vis.appendChild(document.createTextNode(' '));
+  });
+  el.append(sr, vis);
+});
+
+/* ---------- faixas de legenda ---------- */
+const bands = $$('.band').map((el, i, arr) => ({
+  el, a: +el.dataset.a, b: +el.dataset.b, first: i === 0, last: i === arr.length - 1,
+  ramp: +el.dataset.ramp || null, op: -1, k: -1, vis: null
+}));
+let loadK = 0, loadStart = 0;
+function heroProgress() {
+  const total = hero.offsetHeight - innerHeight;
+  if (total <= 0) return 0;
+  return clamp(-hero.getBoundingClientRect().top / total, 0, 1);
+}
+function updateCaptions(p) {
+  for (const B of bands) {
+    const f = Math.min(0.02, (B.b - B.a) / 3);
+    const op = (B.first ? 1 : smooth(p, B.a, B.a + f)) * (B.last ? 1 : 1 - smooth(p, B.b - f, B.b));
+    let k = clamp((p - B.a) / (B.ramp || Math.min(0.025, (B.b - B.a) * 0.35)), 0, 1);
+    if (B.first) k = Math.max(k, loadK);
+    if (Math.abs(op - B.op) > 0.004 || (op === 0) !== (B.op === 0) || (op === 1) !== (B.op === 1)) {
+      B.op = op; B.el.style.opacity = op.toFixed(3);
+    }
+    const vis = op > 0.02;
+    if (vis !== B.vis) { B.vis = vis; B.el.style.visibility = vis ? 'visible' : 'hidden'; }
+    if (Math.abs(k - B.k) > 0.008 || (k === 0 || k === 1) && k !== B.k) {
+      B.k = k; B.el.style.setProperty('--k', k.toFixed(3));
+    }
+  }
+}
+function rampLoad(now) {
+  if (!loadStart) loadStart = now;
+  loadK = smooth(now - loadStart, 0, 1100);
+  updateCaptions(heroProgress());
+  if (loadK < 1) requestAnimationFrame(rampLoad);
+}
+
+/* ---------- rolagem do vídeo: suavização, busca controlada, só escreve quando muda ---------- */
+let target = 0, shown = 0, rafId = null, lastTick = 0, heroOnScreen = true;
+let seekBusy = false, pendingTime = null;
+function requestSeek(t) {
+  if (!video.duration) return;
+  if (seekBusy) { pendingTime = t; return; }
+  seekBusy = true;
+  video.currentTime = t;
+}
+video.addEventListener('seeked', () => {
+  seekBusy = false;
+  if (pendingTime !== null) { const t = pendingTime; pendingTime = null; requestSeek(t); }
+});
+video.addEventListener('error', () => { seekBusy = false; pendingTime = null; failVideo(); });
+function tick(now) {
+  const dt = Math.min(100, now - (lastTick || now));
+  lastTick = now;
+  const k = 0.16;
+  shown += (target - shown) * (1 - Math.pow(1 - k, dt / 16.667));
+  if (Math.abs(target - shown) < 0.0005) { shown = target; rafId = null; lastTick = 0; }
+  else rafId = requestAnimationFrame(tick);
+  requestSeek(shown * video.duration);
+  updateCaptions(shown);
+}
+function onScroll() {
+  target = heroProgress();
+  if (rafId === null && heroOnScreen) rafId = requestAnimationFrame(tick);
+}
+new IntersectionObserver(es => { heroOnScreen = es[0].isIntersecting; if (heroOnScreen) onScroll(); }, { threshold: 0 }).observe(hero);
+
+/* ---------- vídeo como Blob, com anel de progresso ---------- */
+let heroStarted = false;
+function initHeroOnce() {
+  if (heroStarted) return; heroStarted = true;
+  hero.classList.add('loading');
+  let started = false;
+  const go = () => { if (started) return; started = true; loadHeroBlob().catch(failVideo); };
+  const img = new Image(); img.onload = go; img.onerror = go; img.src = 'assets/hero-poster.jpg';
+  setTimeout(go, 4000);
+}
+async function loadHeroBlob() {
+  const ctrl = new AbortController();
+  let watchdog = setTimeout(() => ctrl.abort(), 20000);
+  const res = await fetch(VIDEO_URL, { priority: 'low', signal: ctrl.signal });
+  if (!res.ok) throw new Error('video ' + res.status);
+  const total = Number(res.headers.get('Content-Length')) || VIDEO_BYTES;
+  const reader = res.body.getReader();
+  const chunks = []; let got = 0, lastRing = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    clearTimeout(watchdog); watchdog = setTimeout(() => ctrl.abort(), 20000);
+    chunks.push(value); got += value.length;
+    const frac = Math.min(1, got / total), now = performance.now();
+    if (now - lastRing > 100 || frac === 1) { lastRing = now; ring.style.setProperty('--ld', Math.round(126 * (1 - frac))); }
+  }
+  clearTimeout(watchdog);
+  ring.style.setProperty('--ld', 0);
+  video.src = URL.createObjectURL(new Blob(chunks, { type: 'video/mp4' }));
+  video.load();
+  video.addEventListener('canplay', () => {
+    hero.classList.remove('loading');
+    hero.classList.add('video-ready');
+    requestSeek(heroProgress() * video.duration);
+  }, { once: true });
+}
+function failVideo() {
+  hero.classList.remove('loading');
+  hero.classList.add('video-failed');
+  disableScrub();                         // sem vídeo, o hero vira a imagem composta e a página segue completa
+}
+
+/* ---------- as cinco condições do hero estático, decididas ao vivo ---------- */
+let scrubOn = false;
+function enableScrub() {
+  if (scrubOn) return; scrubOn = true;
+  hero.classList.add('scrub');
+  initHeroOnce();
+  addEventListener('scroll', onScroll, { passive: true });
+  bands.forEach(b => { b.op = -1; b.k = -1; b.vis = null; });
+  loadStart = 0; loadK = 0; requestAnimationFrame(rampLoad);
+  updateCaptions(heroProgress());
+  onScroll();
+}
+function disableScrub() {
+  if (!scrubOn && !hero.classList.contains('scrub')) return;
+  scrubOn = false;
+  hero.classList.remove('scrub');
+  removeEventListener('scroll', onScroll);
+  if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+}
+function applyHeroMode() {
+  if (!HAS_VIDEO || hero.classList.contains('video-failed') || GATES.some(q => matchMedia(q).matches)) disableScrub();
+  else enableScrub();
+}
+const MQLS = GATES.map(q => matchMedia(q));
+MQLS.forEach(m => m.addEventListener('change', applyHeroMode));
+
+/* ---------- ambiente: poeira de fundo ---------- */
+(() => {
+  const env = $('.env'), r = rng(77);
+  for (let i = 0; i < 14; i++) {
+    const m = document.createElement('span'); m.className = 'mote';
+    const s = 2 + r() * 3;
+    m.style.cssText = `left:${(r() * 100).toFixed(1)}%;--s:${s.toFixed(1)}px;--t:${(50 + r() * 40).toFixed(0)}s;--dl:-${(r() * 80).toFixed(0)}s;--dx:${((r() - .5) * 120).toFixed(0)}px`;
+    env.appendChild(m);
+  }
+})();
+document.addEventListener('visibilitychange', () => document.body.classList.toggle('paused', document.hidden));
+
+/* ---------- entradas ao rolar ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const t = e.target; t.classList.add('in');
+  setTimeout(() => t.classList.add('settled'), 1600);
+  io.unobserve(t);
+}), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+$$('.sec, .final, .rv').forEach(el => io.observe(el));
+const live = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('live', e.isIntersecting)), { threshold: 0.1 });
+$$('.final, .sec').forEach(el => live.observe(el));
+
+/* ---------- linha que se desenha ao rolar ---------- */
+const draws = $$('.draw').map(el => ({ el, p: -1 }));
+let drawQueued = false;
+function updateDraws() {
+  drawQueued = false;
+  const reduce = matchMedia(RM).matches;
+  for (const d of draws) {
+    const r = d.el.getBoundingClientRect();
+    const p = reduce ? 1 : clamp((innerHeight * 0.95 - r.top) / (innerHeight * 0.55), 0, 1);
+    if (Math.abs(p - d.p) > 0.004) { d.p = p; d.el.style.setProperty('--p', p.toFixed(3)); }
+  }
+}
+function queueDraws() { if (!drawQueued) { drawQueued = true; requestAnimationFrame(updateDraws); } }
+addEventListener('scroll', queueDraws, { passive: true });
+addEventListener('resize', queueDraws);
+
+/* ---------- categorias: o momento interativo ---------- */
+const ICONS = {
+  fem: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l2 16c0 6-2 8-2 10L12 58h40L40 32c0-2-2-4-2-10l2-16M26 22c3 5 9 5 12 0M24 32h16"/></svg>',
+  mas: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 8L8 17l6 11 8-4v32h26V24l8 4 6-11-14-9c-2 5-6 8-11 8s-9-3-11-8z"/></svg>',
+  fit: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 26v12M17 20v24M47 20v24M54 26v12M17 32h30"/></svg>',
+  bal: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="10" r="5"/><path d="M32 16v16M22 22l10 4 10-4M8 54c8-16 16-20 24-20s16 4 24 20M14 58h36"/></svg>',
+  uni: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 26a14 14 0 0 1 28 0v28a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4zM26 14V9h12v5M24 40h16M24 50h16"/></svg>',
+  tec: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h28M18 54h28M22 10v44M42 10v44M22 20h20M22 28h20M22 36h20M22 44h20M42 32c10 2 14 8 12 18"/></svg>'
+};
+const CATS = {
+  fem: ['Moda feminina', 'Blusas, calças jeans, malhas e bolsas. Peça o que você quer ver e a equipe responde.', 'moda feminina'],
+  mas: ['Moda masculina', 'Camisas, moletons, malhas e calças. Chame e diga o tamanho que você veste.', 'moda masculina'],
+  fit: ['Fitness, dança e esporte', 'Roupa para treinar, dançar e se mexer. Chame no WhatsApp e veja as opções.', 'fitness'],
+  bal: ['Ballet', 'Peças para as aulas de ballet. Diga a idade e o tamanho e a equipe ajuda.', 'ballet'],
+  uni: ['Uniforme escolar', 'Uniformes para a volta às aulas. Informe a escola e o tamanho no WhatsApp.', 'uniforme escolar'],
+  tec: ['Tecidos e moda casa', 'Malhas, rendas, patchwork e aviamentos, no atacado e no varejo. Também moda casa.', 'tecidos e moda casa']
+};
+const tabs = $$('.tab'), pan = $('#painel'), badge = $('#badge');
+const ct = $('#cat-title'), cx = $('#cat-text'), cl = $('#cat-link');
+function show(k, instant) {
+  const [title, text, ask] = CATS[k];
+  const apply = () => {
+    ct.textContent = title; cx.textContent = text; badge.innerHTML = ICONS[k];
+    cl.href = WA + encodeURIComponent('Olá, vim pelo site da EU.Z e quero ver ' + ask);
+    pan.setAttribute('aria-labelledby', 't-' + k);
+    pan.classList.remove('swap');
+  };
+  tabs.forEach(t => { const on = t.dataset.k === k; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
+  if (instant || matchMedia(RM).matches) { apply(); return; }
+  pan.classList.add('swap'); setTimeout(apply, 260);
+}
+tabs.forEach((t, i) => {
+  t.addEventListener('click', () => show(t.dataset.k));
+  t.addEventListener('keydown', e => {
+    const n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+    if (!n) return;
+    e.preventDefault();
+    const nx = tabs[(i + n + tabs.length) % tabs.length]; nx.focus(); show(nx.dataset.k);
+  });
+});
+show('fem', true);
+
+/* ---------- movimento reduzido, ao vivo nos dois sentidos ---------- */
+function pinToFinalStates() { draws.forEach(d => { d.p = 1; d.el.style.setProperty('--p', 1); }); }
+function unpinFinalStates() { draws.forEach(d => { d.p = -1; }); queueDraws(); }
+matchMedia(RM).addEventListener('change', e => {
+  if (e.matches) pinToFinalStates(); else { unpinFinalStates(); applyHeroMode(); }
+});
+if (matchMedia(RM).matches) pinToFinalStates();
+
+applyHeroMode();
+queueDraws();
+})();
+</script>
+</body>
+</html>
